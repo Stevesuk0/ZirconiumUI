@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zirconium UI</title>
+    <!-- 引入 Google Sans 和 Material Icons 字体 -->
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- 引入外部 CSS 文件（请将 style.css 放在相同目录下） -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <button id="menuButton">&#9776;</button>
+        <h1 class="header-title">Zirconium UI</h1>
+        <button id="openModalButton">+</button>
+    </header>
+
+    <div class="nav-drawer" id="navDrawer">
+        <button class="close-button" id="closeDrawerButton">&times;</button>
+        <ul>
+            <li><button class="button" onclick="navigateToPage('homePage')">主页</button></li>
+            <li><button class="button" onclick="navigateToPage('settingsPage')">设置</button></li>
+            <li><button class="button" onclick="navigateToPage('aboutPage')">关于</button></li>
+        </ul>
+    </div>
+
+    <main>
+        <!-- 主页内容 -->
+        <div id="homePage" class="page-content active">
+            <div class="card">
+                <h2>卡片标题</h2>
+                <p>这是一个用于演示的卡片，包含了标题和描述文本。</p>
+                <button class="button">普通按钮</button>
+                <button class="danger-button">危险按钮</button>
+            </div>
+
+            <div class="card">
+                <h2>输入框示例</h2>
+                <input type="text" class="text-field" placeholder="输入文本...">
+                <input type="datetime-local" class="text-field">
+            </div>
+
+            <div class="card">
+                <h2>开关示例</h2>
+                <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider"></span>
+                </label>
+            </div>
+
+            <div class="card">
+                <h2>滑块示例</h2>
+                <input type="range" class="range-input" min="0" max="100" value="50">
+            </div>
+        </div>
+
+        <!-- 下载页面内容 -->
+        <div id="downloadPage" class="page-content">
+            <div class="card">
+                <h2>下载</h2>
+                <p>这是下载页面的内容。</p>
+            </div>
+        </div>
+
+        <!-- 编辑页面内容 -->
+        <div id="editPage" class="page-content">
+            <div class="card">
+                <h2>记录</h2>
+                <p>这是记录页面的内容。</p>
+            </div>
+        </div>
+
+        <!-- 设置页面内容 -->
+        <div id="settingsPage" class="page-content">
+            <div class="card">
+                <h2>设置</h2>
+                <p>这是设置页面的内容。</p>
+            </div>
+        </div>
+
+        <!-- 关于页面内容 -->
+        <div id="aboutPage" class="page-content">
+            <div class="card">
+                <h2>关于</h2>
+                <p>这是关于页面的内容。</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- 模态框 -->
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <h2>添加新项目</h2>
+            <input type="text" class="text-field" placeholder="输入项目名称...">
+            <div class="button-group">
+                <button onclick="closeModal()">取消</button>
+                <button onclick="addItem()">添加</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 底部导航 -->
+    <nav class="footer-nav">
+        <button onclick="navigateToPage('homePage')">
+            <i class="material-icons">home</i>
+            <span>主页</span>
+        </button>
+        <button onclick="navigateToPage('downloadPage')">
+            <i class="material-icons">cloud_download</i>
+            <span>下载</span>
+        </button>
+        <button onclick="navigateToPage('editPage')">
+            <i class="material-icons">edit</i>
+            <span>记录</span>
+        </button>
+        <button onclick="navigateToPage('settingsPage')">
+            <i class="material-icons">settings</i>
+            <span>设置</span>
+        </button>
+    </nav>
+
+    <script src="script.js"></script>
+</body>
+</html>
